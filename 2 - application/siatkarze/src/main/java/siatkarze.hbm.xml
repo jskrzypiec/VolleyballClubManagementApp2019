@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+ 
+  <hibernate-mapping>  
+  	<class name="proj.Miasto" table="miasto">  
+    	<id name="id"> <generator class="native"> </generator>  </id>  
+    	<property name="nazwa" type="string" column="nazwa"></property>         
+  	</class>  
+  	
+  	<class name="proj.Pozycja" table="pozycja">  
+    	<id name="id"> <generator class="native"> </generator>  </id>  
+    	<property name="nazwa" type="string" column="nazwa"></property>         
+  	</class>  
+  	
+  	<class name="proj.Kategoria" table="kategoria">  
+    	<id name="id"> <generator class="native"> </generator>  </id>  
+    	<property name="nazwa" type="string" column="nazwa"></property>         
+  	</class>  
+  	
+  	<class name="proj.DzienTygodnia" table="dzienTygodnia">  
+    	<id name="id"> <generator class="native"> </generator>  </id>  
+    	<property name="nazwa" type="string" column="nazwa"></property>         
+  	</class>  
+  	
+  	<class name="proj.Adres" table="adres">  
+    	<id name="id"> <generator class="native"> </generator>  </id>  
+    	<property name="ulica" type="string" column="ulica"></property>
+    	<property name="nrDomu" type="string" column="nrDomu"></property>
+    	<property name="nrMieszkania" type="integer" column="nrMieszkania"></property>
+    	<property name="kodPocztowy" type="string" column="kodPocztowy"></property>
+    	<!-- <property name="miasto_id" type="integer" column="miasto_id"></property> -->
+    	<many-to-one name="miasto_id" class="proj.Miasto" column="miasto_id"></many-to-one>
+  	</class>  
+  	
+  	<class name="proj.Zawodnik" table="zawodnik">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="imie" type="string" column="imie"></property>    
+	    <property name="nazwisko" type="string" column="nazwisko"></property> 
+	    <property name="rokUrodzenia" type="integer" column="rokUrodzenia"></property> 
+	    <property name="wzrost" type="integer" column="wzrost"></property> 
+	    <property name="waga" type="integer" column="waga"></property>   
+	    <property name="nrTelefonu" type="integer" column="nrTelefonu"></property>  
+	    <!--<property name="pozycja_id" type="integer" column="pozycja_id"></property>  
+	    <property name="adres_id" type="integer" column="adres_id"></property>  
+	    <property name="klub_id" type="integer" column="klub_id"></property>  
+	    <property name="grupa_id" type="integer" column="grupa_id"></property> -->
+	    <many-to-one name="pozycja_id" class="proj.Pozycja" column="pozycja_id"></many-to-one>
+	    <many-to-one name="adres_id" class="proj.Adres" column="adres_id"></many-to-one>
+	    <many-to-one name="klub_id" class="proj.Klub" column="klub_id"></many-to-one>
+	    <many-to-one name="grupa_id" class="proj.Grupa" column="grupa_id"></many-to-one>     
+	    <property name="login_" type="string" column="login_"></property>  
+	    <property name="haslo_" type="string" column="haslo_"></property>   
+  	</class>
+  	
+  	<class name="proj.Klub" table="klub">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="nazwa" type="string" column="nazwa"></property>   
+	    <property name="rokZalozenia" type="integer" column="rokZalozenia"></property>
+	    <property name="rokRozwiazania" type="integer" column="rokRozwiazania"></property>   
+  	</class> 
+  
+ 	<class name="proj.Trener" table="trener">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="imie" type="string" column="imie"></property>   
+	    <property name="nazwisko" type="string" column="nazwisko"></property> 
+	    <property name="rokUrodzenia" type="integer" column="rokUrodzenia"></property> 
+	    <property name="nrTelefonu" type="integer" column="nrTelefonu"></property> 
+	    <!-- <property name="adres_id" type="integer" column="adres_id"></property> 
+	    <property name="klub_id" type="integer" column="klub_id"></property> -->
+	    <many-to-one name="adres_id" class="proj.Adres" column="adres_id"></many-to-one>
+	    <many-to-one name="klub_id" class="proj.Klub" column="klub_id"></many-to-one>
+	    <property name="login_" type="string" column="login_"></property> 
+	    <property name="haslo_" type="string" column="haslo_"></property>   
+  	</class> 
+  
+  	<class name="proj.Sala" table="sala">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="nazwa" type="string" column="nazwa"></property>     
+	    <!--  <property name="adres_id" type="integer" column="adres_id"></property> -->
+	    <many-to-one name="adres_id" class="proj.Adres" column="adres_id"></many-to-one>
+  	</class> 
+  
+  	<class name="proj.Grupa" table="grupa">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="nazwa" type="string" column="nazwa"></property>     
+	    <!-- <property name="kategoria_id" type="integer" column="kategoria_id"></property> 
+	    <property name="trener_id" type="integer" column="trener_id"></property> -->
+	    <many-to-one name="kategoria_id" class="proj.Kategoria" column="kategoria_id"></many-to-one>
+	    <many-to-one name="trener_id" class="proj.Trener" column="trener_id"></many-to-one>
+  	</class> 
+  
+  	<class name="proj.Zajecia" table="zajecia">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="godzRozpoczecia" type="time" column="godzRozppoczecia"></property>   
+	    <property name="godzZakonczenia" type="time" column="godzZakonczenia"></property>
+	    <!--  <property name="dzienTygodnia_id" type="integer" column="dzienTygodnia_id"></property>
+	    <property name="grupa_id" type="integer" column="grupa_id"></property> 
+	    <property name="sala_id" type="integer" column="sala_id"></property> -->
+	    <many-to-one name="dzienTygodnia_id" class="proj.DzienTygodnia" column="dzienTygodnia_id"></many-to-one>
+	    <many-to-one name="grupa_id" class="proj.Grupa" column="grupa_id"></many-to-one>
+	    <many-to-one name="sala_id" class="proj.Sala" column="sala_id"></many-to-one>
+  	</class> 
+  
+  	<class name="proj.Administrator" table="administrator">  
+		<id name="id">  <generator class="native"></generator>  </id>        
+	    <property name="imie" type="string" column="imie"></property>    
+	    <property name="nazwisko" type="string" column="nazwisko"></property> 
+	    <property name="login_" type="string" column="login_"></property> 
+	    <property name="haslo_" type="string" column="haslo_"></property>  
+  	</class>
+            
+  </hibernate-mapping>  

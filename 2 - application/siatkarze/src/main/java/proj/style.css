@@ -1,0 +1,187 @@
+#lewy{
+	-fx-background-color: LightSteelBlue;
+	-fx-alignment: center;
+	-fx-min-height: 866px;
+}
+#prawy{
+	-fx-background-color: CornflowerBlue;
+	-fx-alignment: center;
+}
+.label{
+	-fx-pref-height: 30px;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-padding: 0px 5px 0px 5px;
+}
+.center{
+	-fx-alignment: center;
+	-fx-color: silver;
+}
+.button:hover{
+	-fx-color: gray;
+}
+.button{
+	-fx-background-radius: 5px;
+}
+
+
+#logowanieTF{
+	-fx-pref-width: 300px;
+}
+#logowanieHBox{
+	-fx-alignment: center;
+}
+
+/* 			*/
+/* ZAWODNIK */
+/* 			*/
+#zaw_lewyButtons{
+	-fx-pref-width: 170px;
+}
+#zaw_startVBox{
+	-fx-alignment: center;
+}
+#zaw_treningiVBox{
+	-fx-alignment: center;
+}
+#zaw_grupaVBox{
+	-fx-alignment: center;
+	-fx-background-color: CornflowerBlue;
+}
+/* zawodnik edycja */
+#zeL{
+	-fx-alignment: top-right;
+}
+#zeTF{
+	-fx-alignment: top-center;
+}
+#zeM{
+	-fx-alignment: top-left;
+}
+#zeB1{
+	-fx-alignment: top-center;
+}
+#zeHBox{
+	-fx-alignment: center;
+}
+#ZawEdycjaMessage{
+	-fx-min-width: 200px;
+	-fx-max-width: 200px;
+	-fx-font-size: 14px;
+}
+/* zawdonik edycja podpowiedzi (?) */
+#zeLP1_wzrost, #zeLP2_waga, #zeLP3_tel, #zeLP4_ul, #zeLP5_dom, #zeLP6_mieszk, #zeLP7_kod, #zeLP8_hasl{
+	-fx-min-width: 28px;
+	-fx-min-height: 28px;
+	-fx-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-background-color: black;
+}
+
+/* 			*/
+/* 	TRENER	*/
+/* 			*/
+#tren_lewyButtons{
+	-fx-pref-width: 170px;
+}
+#tren_startVBox{
+	-fx-alignment: center;
+}
+#tren_grupyVBox{
+	-fx-alignment: center;
+}
+/* trener edycja */
+/* zawodnik edycja */
+#teL{
+	-fx-alignment: top-right;
+}
+#teTF{
+	-fx-alignment: top-center;
+}
+#teM{
+	-fx-alignment: top-left;
+}
+#teB1{
+	-fx-alignment: top-center;
+}
+#teHBox{
+	-fx-alignment: center;
+}
+#TrenEdycjaMessage{
+	-fx-min-width: 200px;
+	-fx-max-width: 200px;
+	-fx-font-size: 14px;
+}
+
+/* 					*/
+/* 	ADMINISTRATOR	*/
+/* 					*/
+#adm_lewyButtons{
+	-fx-pref-width: 170px;
+}
+#adm_startVBox{
+	-fx-alignment: center;
+}
+.adm_1messg{ /* dzienTyg,kategoria,miasto,pozycja */
+	-fx-min-width: 220px;
+	-fx-max-width: 220px;
+	-fx-alignment: center-left;
+}
+.adm_dodajMessg{
+	-fx-min-width: 220px;
+	-fx-max-width: 220px;
+	-fx-alignment: center-right;
+}
+#adm_edycjaL{
+	-fx-alignment: center-right;
+	-fx-min-width: 270px;
+	-fx-max-width: 270px;
+	
+}
+#adm_edycjaTF{
+	-fx-alignment: center;
+	-fx-min-width: 270px;
+	-fx-max-width: 270px;
+}
+#adm_edycjaM{
+	-fx-alignment: center-left;
+	-fx-min-width: 270px;
+	-fx-max-width: 270px;
+	-fx-font-size: 14px;
+}
+/* adm-dzienTygodnia, miasto, */
+.adm_CUD_przyciski{
+	-fx-alignment: center;
+	-fx-spacing: 50px;
+	-fx-padding: 30px 0px 30px 0px;
+}
+#adm_dzienTyg_dodaj_nazwaHB, #adm_miasto_dodaj_nazwaHB, #adm_pozycja_dodaj_nazwaHB, #adm_kategoria_dodaj_nazwaHB,
+#adm_adres_dodajHB{
+	-fx-alignment: center;
+}
+
+/* ikonki */
+#zamknij{
+	-fx-background-image: url("zamknij.png");
+}
+
+#zwin{
+	-fx-background-image: url("zwin.png");
+}
+
+/* inne */
+#s_przyciski{
+	-fx-background-color: dimgray;
+}
+#pp{
+	-fx-background-color: dimgray; /*gray/dimgray*/
+}
+.sscroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.sscroll-pane{
+	-fx-background-color: CornflowerBlue;
+	-fx-alignment: center;
+}
+
